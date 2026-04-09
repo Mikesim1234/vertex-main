@@ -19,7 +19,7 @@ export async function Jobs() {
             Join teams shaping exceptional experiences.
           </h2>
           <p className="mt-4 text-base text-foreground/70">
-            Browse current openings curated by Vertex Global and apply to roles across industries that match your
+            Browse current openings curated by Vertex Edge Consultants and apply to roles across industries that match your
             talent.
           </p>
         </div>

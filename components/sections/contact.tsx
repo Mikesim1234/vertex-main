@@ -1,7 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
-import emailjs from "@emailjs/browser"
+import { useState } from "react"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -18,8 +17,9 @@ const contactSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
   company: z.string().optional(),
-  serviceInterest: z.string().min(2, "Tell us the service you are interested in."),
+  serviceInterest: z.string().optional(),
   message: z.string().min(10, "Please share a few more details about your needs."),
+  website: z.string().optional(),
 })
 
 type ContactFormValues = z.infer<typeof contactSchema>
@@ -48,48 +48,40 @@ export function Contact() {
       company: "",
       serviceInterest: "",
       message: "",
+      website: "",
     },
   })
-
-  const emailConfig = useMemo(
-    () => ({
-      serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
-      templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
-      publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "",
-    }),
-    []
-  )
 
   const onSubmit = async (data: ContactFormValues) => {
     setStatusMessage(null)
 
-    if (!emailConfig.serviceId || !emailConfig.templateId || !emailConfig.publicKey) {
-      setStatus("error")
-      setStatusMessage("Email service is not configured. Please add EmailJS keys to your environment.")
-      return
-    }
-
     try {
       setStatus("loading")
-      await emailjs.send(
-        emailConfig.serviceId,
-        emailConfig.templateId,
-        {
-          fullName: data.fullName,
-          email: data.email,
-          phone: data.phone,
-          company: data.company,
-          serviceInterest: data.serviceInterest,
-          message: data.message,
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        emailConfig.publicKey
-      )
+        body: JSON.stringify(data),
+      })
+
+      const payload = (await response.json()) as { message?: string }
+
+      if (!response.ok) {
+        throw new Error(payload.message || "Something went wrong. Please try again or email us directly.")
+      }
+
       setStatus("success")
-      setStatusMessage("Thanks for reaching out! We'll respond within one business day.")
+      setStatusMessage(payload.message || "Thanks for reaching out! We'll respond within one business day.")
       form.reset()
     } catch (error) {
       setStatus("error")
-      setStatusMessage("Something went wrong. Please try again or email us directly.")
+      setStatusMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again or email us directly."
+      )
     }
   }
 
@@ -217,6 +209,24 @@ export function Contact() {
                         <option key={option} value={option} />
                       ))}
                     </datalist>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="website"
+                render={({ field }) => (
+                  <FormItem className="hidden" aria-hidden="true">
+                    <FormLabel>Website</FormLabel>
+                    <FormControl>
+                      <Input
+                        autoComplete="off"
+                        tabIndex={-1}
+                        {...field}
+                      />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}

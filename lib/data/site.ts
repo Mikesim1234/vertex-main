@@ -18,7 +18,7 @@ import {
 } from "lucide-react"
 
 export const siteConfig = {
-  name: "Vertex Global Ltd",
+  name: "Vertex Edge Consultants",
   tagline: "Human resource solutions for modern, growth-focused organizations.",
   location: "Nairobi, Kenya",
   phone: "+254 790 669 385",

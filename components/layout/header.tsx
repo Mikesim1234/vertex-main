@@ -55,10 +55,10 @@ export function Header() {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:h-24 lg:px-8">
+      <div className="container mx-auto flex h-20 items-center justify-between gap-4 px-4 lg:h-24 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-3 font-semibold text-foreground z-50"
+          className="z-50 flex min-w-0 items-center gap-3 font-semibold text-foreground"
         >
           <Image
             src="/vertex-logo-final.png"
@@ -68,11 +68,11 @@ export function Header() {
             className="h-12 w-auto"
             priority
           />
-          <span className="text-lg tracking-tight lg:text-xl">{siteConfig.name}</span>
+          <span className="truncate text-lg tracking-tight lg:text-xl">{siteConfig.name}</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex">
+        <div className="hidden shrink-0 items-center lg:flex">
           <NavigationMenu>
             <NavigationMenuList>
               {navLinks.map((link) => {
@@ -209,7 +209,7 @@ export function Header() {
           </NavigationMenu>
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <Button asChild size="sm" className="rounded-full px-5">
             <Link href="/#contact">Book a Consultation</Link>
           </Button>
@@ -217,7 +217,7 @@ export function Header() {
 
         <button
           type="button"
-          className="rounded-full border border-border/60 p-2 text-foreground/80 transition hover:text-foreground md:hidden"
+          className="rounded-full border border-border/60 p-2 text-foreground/80 transition hover:text-foreground lg:hidden"
           onClick={() => setMobileOpen((open) => !open)}
           aria-label="Toggle navigation"
           aria-expanded={mobileOpen}
@@ -227,7 +227,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-border/60 bg-background/95 px-4 py-6 backdrop-blur-lg md:hidden h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="h-[calc(100vh-80px)] overflow-y-auto border-t border-border/60 bg-background/95 px-4 py-6 backdrop-blur-lg lg:hidden">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               if (link.label === "Services") {

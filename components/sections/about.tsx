@@ -13,7 +13,7 @@ export function About() {
           <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-white/90 shadow-xl">
             <Image
               src="/professional-business-team-collaboration-in-modern.jpg"
-              alt="Vertex Global team consulting"
+              alt="Vertex Edge Consultants team consulting"
               width={640}
               height={720}
               className="h-[420px] w-full object-cover sm:h-[520px]"
@@ -32,7 +32,7 @@ export function About() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">About Vertex Global</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">About Vertex Edge Consultants</p>
           <h2 className="mt-4 font-display text-3xl font-semibold text-foreground sm:text-4xl">
             Your strategic partner for people-first growth.
           </h2>

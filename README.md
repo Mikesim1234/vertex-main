@@ -1,4 +1,4 @@
-# Vertex Global Ltd
+# Vertex Edge Consultants
 
 Recruitment, HR outsourcing, and hospitality training website built with Next.js.
 

@@ -32,7 +32,7 @@ export function Hero() {
               Recruitment, HR operations, and training that help teams scale with confidence.
             </span>
             <span className="hidden sm:inline">
-              Vertex Global Ltd delivers recruitment, HR operations, and training programs that help organizations
+              Vertex Edge Consultants delivers recruitment, HR operations, and training programs that help organizations
               across industries scale with confidence.
             </span>
           </p>

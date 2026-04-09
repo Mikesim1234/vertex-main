@@ -1,7 +1,28 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { ScrollProgress } from "@/components/layout/scroll-progress"
 import { Footer } from "@/components/layout/footer"
 import { Jobs } from "@/components/sections/jobs"
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description:
+    "Explore current job openings curated by Vertex Edge Consultants across recruitment, hospitality, and growth-focused organizations.",
+  alternates: {
+    canonical: "/careers",
+  },
+  openGraph: {
+    title: "Careers | Vertex Edge Consultants",
+    description:
+      "Browse current Vertex Edge Consultants job openings and apply to roles across recruitment, hospitality, and other industries.",
+    url: "/careers",
+  },
+  twitter: {
+    title: "Careers | Vertex Edge Consultants",
+    description:
+      "Browse current Vertex Edge Consultants job openings and apply to roles across recruitment, hospitality, and other industries.",
+  },
+}
 
 export default function CareersPage() {
   return (
