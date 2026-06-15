@@ -125,13 +125,9 @@ export function Contact() {
             </div>
             <div className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-<<<<<<< HEAD
-              <span>{siteConfig.location}</span>
-=======
               <Link href="/locations/nairobi" className="font-medium transition-colors hover:text-primary">
                 {siteConfig.location}
               </Link>
->>>>>>> ec98e07 (Updated contact details and footer)
             </div>
           </div>
 

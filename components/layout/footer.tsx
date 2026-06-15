@@ -46,13 +46,9 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-<<<<<<< HEAD
-                <span>{siteConfig.location}</span>
-=======
                 <Link href="/locations/nairobi" className="transition hover:text-primary">
                   {siteConfig.location}
                 </Link>
->>>>>>> ec98e07 (Updated contact details and footer)
               </div>
             </div>
           </div>

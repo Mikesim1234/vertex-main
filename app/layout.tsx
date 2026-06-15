@@ -62,26 +62,6 @@ export const metadata: Metadata = {
   },
 }
 
-<<<<<<< HEAD
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Vertex Edge Consultants",
-  url: siteUrl,
-  logo: `${siteUrl}${ogImage}`,
-  email: "info@vertexedgeconsultants.co.ke",
-  telephone: "+254 734 933297",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Nairobi",
-    addressCountry: "KE",
-  },
-  description:
-    "Recruitment, HR outsourcing, compliance support, and training programs for growth-focused organizations.",
-}
-
-=======
->>>>>>> ec98e07 (Updated contact details and footer)
 export default function RootLayout({
   children,
 }: Readonly<{
