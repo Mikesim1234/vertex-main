@@ -21,8 +21,8 @@ export const siteConfig = {
   name: "Vertex Edge Consultants",
   tagline: "Human resource solutions for modern, growth-focused organizations.",
   location: "Nairobi, Kenya",
-  phone: "+254 790 669 385",
-  email: "vertexrecruimentglobal@gmail.com",
+  phone: "+254 734 933297",
+  email: "info@vertexedgeconsultants.co.ke",
 }
 
 export const navLinks = [

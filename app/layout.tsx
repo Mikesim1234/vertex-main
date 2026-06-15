@@ -56,8 +56,8 @@ const organizationJsonLd = {
   name: "Vertex Edge Consultants",
   url: siteUrl,
   logo: `${siteUrl}${ogImage}`,
-  email: "vertexrecruimentglobal@gmail.com",
-  telephone: "+254 790 669 385",
+  email: "info@vertexedgeconsultants.co.ke",
+  telephone: "+254 734 933297",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Nairobi",

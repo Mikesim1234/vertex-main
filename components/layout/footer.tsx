@@ -24,16 +24,28 @@ export function Footer() {
               Recruitment, training, and HR solutions that keep organizations operating at their best.
             </p>
             <div className="mt-6 space-y-3 text-sm text-foreground/70">
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary" />
-                <span>{siteConfig.phone}</span>
+              <div className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                <a
+                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                  className="break-words transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  aria-label={`Call ${siteConfig.name} at ${siteConfig.phone}`}
+                >
+                  {siteConfig.phone}
+                </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-primary" />
-                <span>{siteConfig.email}</span>
+              <div className="flex items-start gap-2">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="break-all transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  aria-label={`Email ${siteConfig.name} at ${siteConfig.email}`}
+                >
+                  {siteConfig.email}
+                </a>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary" />
+              <div className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                 <span>{siteConfig.location}</span>
               </div>
             </div>
