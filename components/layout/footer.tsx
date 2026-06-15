@@ -46,7 +46,13 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+<<<<<<< HEAD
                 <span>{siteConfig.location}</span>
+=======
+                <Link href="/locations/nairobi" className="transition hover:text-primary">
+                  {siteConfig.location}
+                </Link>
+>>>>>>> ec98e07 (Updated contact details and footer)
               </div>
             </div>
           </div>
@@ -68,7 +74,15 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground">Services</h3>
             <ul className="mt-4 space-y-2 text-sm text-foreground/70">
               {services.slice(0, 4).map((service) => (
-                <li key={service.id}>{service.title}</li>
+                <li key={service.id}>
+                  {service.href ? (
+                    <Link href={service.href} className="transition hover:text-foreground">
+                      {service.title}
+                    </Link>
+                  ) : (
+                    service.title
+                  )}
+                </li>
               ))}
             </ul>
           </div>

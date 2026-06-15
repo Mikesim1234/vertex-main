@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { ArrowUpRight, CheckCircle2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -20,11 +21,11 @@ export function Services() {
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Core Services</p>
           <h2 className="mt-4 font-display text-3xl font-semibold text-foreground sm:text-4xl">
-            End-to-end HR support for growth-driven teams.
+            Recruitment, staffing, HR outsourcing, and corporate training for Kenyan teams.
           </h2>
           <p className="mt-4 text-base text-foreground/70">
-            From talent acquisition to compliance, we deliver scalable HR solutions built for modern organizations
-            across industries.
+            From talent acquisition to HR consulting, we deliver scalable people solutions built for modern
+            organizations in Nairobi and across Kenya.
           </p>
         </div>
 
@@ -99,6 +100,11 @@ export function Services() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
+              {activeService.href && (
+                <Button asChild variant="outline" className="rounded-full px-6">
+                  <Link href={activeService.href}>Learn More</Link>
+                </Button>
+              )}
               <Button asChild className="rounded-full px-6">
                 <a href="#contact">Request a Consultation</a>
               </Button>

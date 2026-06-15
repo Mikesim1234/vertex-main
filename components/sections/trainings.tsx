@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 
 import { trainingAreas } from "@/lib/data/site"
 
@@ -17,11 +18,11 @@ export function Trainings() {
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Training Areas</p>
           <h2 className="mt-4 font-display text-3xl font-semibold text-foreground sm:text-4xl">
-            Six focused learning tracks for every industry.
+            Corporate training and HR training tracks for every industry.
           </h2>
           <p className="mt-4 text-base text-foreground/70">
-            From hospitality excellence to HR analytics, our programs equip teams with practical skills that strengthen
-            performance and service delivery.
+            From hospitality excellence to HR analytics, our corporate training programs in Kenya equip teams with
+            practical skills that strengthen performance and service delivery.
           </p>
         </div>
 
@@ -72,6 +73,15 @@ export function Trainings() {
             </div>
           </div>
         )}
+
+        <div className="mt-8 text-center">
+          <Link
+            href="/services/corporate-training-kenya"
+            className="inline-flex items-center rounded-full border border-primary/30 bg-white/80 px-5 py-2 text-sm font-medium text-primary transition hover:bg-primary hover:text-white"
+          >
+            Explore Corporate Training in Kenya
+          </Link>
+        </div>
       </div>
     </section>
   )

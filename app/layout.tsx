@@ -2,46 +2,58 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Fraunces, Sora } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { JsonLd } from "@/components/seo/json-ld"
+import { seoKeywords, siteConfig } from "@/lib/data/site"
+import {
+  buildLocalBusinessSchema,
+  buildOrganizationSchema,
+  buildWebsiteSchema,
+} from "@/lib/seo/schema"
 import "./globals.css"
 
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" })
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" })
-const siteUrl = "https://vertexglobal.co.ke"
 const ogImage = "/vertex-logo-final.png"
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Vertex Edge Consultants | HR Solutions, Recruitment & Training",
+    default: "Recruitment Agency Kenya | HR Outsourcing & Training",
     template: "%s | Vertex Edge Consultants",
   },
   description:
-    "Vertex Edge Consultants delivers recruitment, HR outsourcing, compliance support, and training programs for growth-focused organizations.",
+    "Vertex Edge Consultants is a Nairobi HR consulting firm offering recruitment, staffing, HR outsourcing, corporate training, and talent acquisition across Kenya.",
+  keywords: seoKeywords,
   generator: "v0.app",
   alternates: {
     canonical: "/",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
-    url: siteUrl,
-    siteName: "Vertex Edge Consultants",
-    title: "Vertex Edge Consultants | HR Solutions, Recruitment & Training",
+    url: "/",
+    siteName: siteConfig.name,
+    locale: "en_KE",
+    title: "Recruitment Agency Kenya | HR Outsourcing & Training",
     description:
-      "Recruitment, HR outsourcing, compliance support, and practical training programs for growth-focused organizations.",
+      "Nairobi-based recruitment, staffing, HR outsourcing, HR consulting, and corporate training services for organizations across Kenya.",
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Vertex Edge Consultants",
+        alt: siteConfig.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vertex Edge Consultants | HR Solutions, Recruitment & Training",
+    title: "Recruitment Agency Kenya | HR Outsourcing & Training",
     description:
-      "Recruitment, HR outsourcing, compliance support, and practical training programs for growth-focused organizations.",
+      "Recruitment, staffing, HR outsourcing, HR consulting, and corporate training services in Kenya.",
     images: [ogImage],
   },
   icons: {
@@ -50,6 +62,7 @@ export const metadata: Metadata = {
   },
 }
 
+<<<<<<< HEAD
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -67,6 +80,8 @@ const organizationJsonLd = {
     "Recruitment, HR outsourcing, compliance support, and training programs for growth-focused organizations.",
 }
 
+=======
+>>>>>>> ec98e07 (Updated contact details and footer)
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -75,10 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sora.variable} ${fraunces.variable} font-sans antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <JsonLd data={[buildOrganizationSchema(), buildLocalBusinessSchema(), buildWebsiteSchema()]} />
         {children}
         <Analytics />
       </body>

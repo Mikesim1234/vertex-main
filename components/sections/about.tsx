@@ -2,7 +2,7 @@ import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
 
 import { AnimatedCounter } from "@/components/animated-counter"
-import { companyStats, companyValues } from "@/lib/data/site"
+import { companyStats, companyValues, trustSignals } from "@/lib/data/site"
 
 export function About() {
   return (
@@ -34,15 +34,15 @@ export function About() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">About Vertex Edge Consultants</p>
           <h2 className="mt-4 font-display text-3xl font-semibold text-foreground sm:text-4xl">
-            Your strategic partner for people-first growth.
+            Nairobi HR consultants for people-first growth across Kenya.
           </h2>
           <p className="mt-4 text-base text-foreground/70">
-            We help organizations across industries align talent, operations, and culture to deliver exceptional
-            experiences and sustainable growth.
+            We help organizations across Kenya align recruitment, staffing, HR outsourcing, corporate training, and
+            culture to deliver exceptional employee and customer experiences.
           </p>
           <p className="mt-4 text-base text-foreground/70">
-            Our consultants combine HR expertise with hands-on industry insight, providing clear roadmaps, measurable
-            outcomes, and high-touch delivery.
+            Our consultants combine practical HR expertise with hands-on industry insight, providing clear roadmaps,
+            measurable outcomes, and high-touch delivery for leaders who need dependable people operations.
           </p>
 
           <div className="mt-6 space-y-3">
@@ -52,6 +52,18 @@ export function About() {
                 <span>{value}</span>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-border/60 bg-white/85 p-5 shadow-sm">
+            <p className="text-sm font-semibold text-foreground">Trust signals</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {trustSignals.map((signal) => (
+                <div key={signal} className="flex items-start gap-2 text-sm text-foreground/70">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <span>{signal}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

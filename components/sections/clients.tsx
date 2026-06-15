@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { clients } from "@/lib/data/site"
+import { caseStudySnapshots, clients } from "@/lib/data/site"
 
 function getInitials(name: string) {
   const parts = name.split(" ").filter(Boolean)
@@ -51,6 +51,26 @@ export function Clients() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-14">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Proof Areas</p>
+            <h3 className="mt-4 font-display text-2xl font-semibold text-foreground sm:text-3xl">
+              Practical HR support across real Kenyan business contexts.
+            </h3>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {caseStudySnapshots.map((snapshot) => (
+              <article
+                key={snapshot.title}
+                className="rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm"
+              >
+                <h4 className="text-base font-semibold text-foreground">{snapshot.title}</h4>
+                <p className="mt-3 text-sm leading-6 text-foreground/70">{snapshot.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

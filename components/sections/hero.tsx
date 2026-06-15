@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button"
 import { companyStats } from "@/lib/data/site"
 
 const highlightPoints = [
-  "Industry-ready talent strategies",
-  "Compliance-ready HR operations",
-  "Training programs that lift team performance",
+  "Recruitment and staffing solutions in Kenya",
+  "HR outsourcing and consulting for Nairobi employers",
+  "Corporate training programs that lift team performance",
 ]
 
 export function Hero() {
@@ -20,20 +20,20 @@ export function Hero() {
       <div className="container mx-auto grid items-center gap-10 px-4 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-8">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-foreground/70 shadow-sm">
-            People & HR Excellence
+            Recruitment, Staffing & HR Consulting in Kenya
           </div>
           <h1 className="mt-6 text-balance font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            <span className="sm:hidden">HR that scales teams.</span>
-            <span className="hidden sm:inline">Build a workforce people remember.</span>
+            <span className="sm:hidden">Recruitment and HR support in Kenya.</span>
+            <span className="hidden sm:inline">Recruitment agency and HR consultants in Kenya.</span>
             <span className="block text-primary">People strategy that performs.</span>
           </h1>
           <p className="mt-5 text-pretty text-base text-foreground/70 sm:text-lg">
             <span className="sm:hidden">
-              Recruitment, HR operations, and training that help teams scale with confidence.
+              Recruitment, staffing, HR outsourcing, and training for teams across Kenya.
             </span>
             <span className="hidden sm:inline">
-              Vertex Edge Consultants delivers recruitment, HR operations, and training programs that help organizations
-              across industries scale with confidence.
+              Vertex Edge Consultants delivers recruitment, staffing, HR outsourcing, HR consulting, and corporate
+              training programs for organizations in Nairobi and across Kenya.
             </span>
           </p>
 

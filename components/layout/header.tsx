@@ -87,7 +87,7 @@ export function Header() {
                           {services.map((service) => (
                             <Link
                               key={service.id}
-                              href="/#services"
+                              href={service.href ?? "/#services"}
                               className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             >
                               <div className="flex items-center gap-2 text-sm font-medium leading-none">
@@ -242,7 +242,7 @@ export function Header() {
                           {services.map((service) => (
                             <Link
                               key={service.id}
-                              href="/#services"
+                              href={service.href ?? "/#services"}
                               className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
                               onClick={() => setMobileOpen(false)}
                             >
