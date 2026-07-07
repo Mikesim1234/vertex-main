@@ -425,14 +425,28 @@ export const companyStats = [
 
 export const seoKeywords = [
   "Recruitment agency Kenya",
-  "Recruitment company Kenya",
+  "Recruitment company Nairobi",
   "Staffing agency Kenya",
-  "Staffing solutions Kenya",
+  "Staffing solutions Nairobi",
   "HR outsourcing Kenya",
+  "HR outsourcing Nairobi",
   "Corporate training Kenya",
+  "Corporate training Nairobi",
   "HR training Kenya",
   "HR consultants Kenya",
+  "HR consultants Nairobi",
   "Talent acquisition Kenya",
+  "Talent acquisition services Nairobi",
+  "Recruitment services Nairobi",
+  "HR consulting services Kenya",
+  "Employee recruitment agency Nairobi",
+  "Executive recruitment Kenya",
+  "HR staffing solutions Kenya",
+  "Payroll outsourcing Kenya",
+  "HR administration services Nairobi",
+  "Compliance HR services Kenya",
+  "Leadership training Kenya",
+  "Workforce recruitment Nairobi",
 ]
 
 export type Faq = {

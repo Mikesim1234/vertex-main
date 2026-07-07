@@ -4,10 +4,18 @@ import { siteConfig } from "@/lib/data/site"
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        crawlDelay: 0,
+      },
+    ],
     sitemap: `${siteConfig.url}/sitemap.xml`,
     host: siteConfig.url,
   }

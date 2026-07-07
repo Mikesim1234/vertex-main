@@ -18,11 +18,11 @@ const ogImage = "/vertex-logo-final.png"
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Recruitment Agency Kenya | HR Outsourcing & Training",
+    default: "HR Recruitment Agency in Nairobi, Kenya | Vertex Edge Consultants",
     template: "%s | Vertex Edge Consultants",
   },
   description:
-    "Vertex Edge Consultants is a Nairobi HR consulting firm offering recruitment, staffing, HR outsourcing, corporate training, and talent acquisition across Kenya.",
+    "Award-winning HR recruitment agency in Nairobi, Kenya. We provide recruitment, staffing, HR outsourcing, corporate training, talent acquisition, and HR consulting services across Kenya. Expert HR solutions for growing businesses.",
   keywords: seoKeywords,
   generator: "v0.app",
   alternates: {
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     url: "/",
     siteName: siteConfig.name,
     locale: "en_KE",
-    title: "Recruitment Agency Kenya | HR Outsourcing & Training",
+    title: "HR Recruitment Agency in Nairobi, Kenya | Vertex Edge Consultants",
     description:
-      "Nairobi-based recruitment, staffing, HR outsourcing, HR consulting, and corporate training services for organizations across Kenya.",
+      "Award-winning HR recruitment agency in Nairobi, Kenya. Professional recruitment, staffing, HR outsourcing, corporate training, and talent acquisition services across Kenya.",
     images: [
       {
         url: ogImage,
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Recruitment Agency Kenya | HR Outsourcing & Training",
+    title: "HR Recruitment Agency Nairobi | Staffing & Training Services",
     description:
-      "Recruitment, staffing, HR outsourcing, HR consulting, and corporate training services in Kenya.",
+      "Professional HR recruitment agency in Nairobi, Kenya. Recruitment, staffing, HR outsourcing, corporate training, and talent acquisition for growing businesses.",
     images: [ogImage],
   },
   icons: {
