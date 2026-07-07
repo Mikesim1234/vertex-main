@@ -94,3 +94,21 @@ export async function POST(request: Request) {
     )
   }
 }
+
+// Development-only endpoint to verify SMTP connection
+export async function GET(request: Request) {
+  if (process.env.NODE_ENV !== "development") {
+    return NextResponse.json({ message: "Not found" }, { status: 404 })
+  }
+
+  try {
+    const { testSmtpConnection } = await import("@/lib/email/send-email")
+    const result = await testSmtpConnection()
+    return NextResponse.json({ message: result.message }, { status: 200 })
+  } catch (error) {
+    return NextResponse.json(
+      { message: error instanceof Error ? error.message : "SMTP test failed" },
+      { status: 500 }
+    )
+  }
+}
