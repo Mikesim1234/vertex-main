@@ -7,7 +7,7 @@ const contactRequestSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().max(40).optional().or(z.literal("")),
   company: z.string().max(120).optional().or(z.literal("")),
-  serviceInterest: z.string().max(120).optional().or(z.literal("")),
+  subject: z.string().min(2, "Please enter a subject.").max(160),
   message: z.string().min(10, "Please share a few more details about your needs.").max(5000),
   website: z.string().optional().or(z.literal("")),
 })
@@ -78,7 +78,7 @@ export async function POST(request: Request) {
       email: result.data.email,
       phone: result.data.phone,
       company: result.data.company,
-      serviceInterest: result.data.serviceInterest,
+      subject: result.data.subject,
       message: result.data.message,
     })
 

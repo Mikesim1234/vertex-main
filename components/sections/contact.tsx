@@ -18,7 +18,7 @@ const contactSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
   company: z.string().optional(),
-  serviceInterest: z.string().optional(),
+  subject: z.string().min(2, "Please enter a subject."),
   message: z.string().min(10, "Please share a few more details about your needs."),
   website: z.string().optional(),
 })
@@ -47,7 +47,7 @@ export function Contact() {
       email: "",
       phone: "",
       company: "",
-      serviceInterest: "",
+      subject: "",
       message: "",
       website: "",
     },
@@ -89,7 +89,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[linear-gradient(180deg,_rgba(251,146,60,0.08),_rgba(255,255,255,0.7))] py-20 lg:py-28"
+      className="android-safe-section-bg bg-white/[0.92] py-20 lg:py-28"
     >
       <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
@@ -212,12 +212,12 @@ export function Contact() {
 
               <FormField
                 control={form.control}
-                name="serviceInterest"
+                name="subject"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Service Interest</FormLabel>
+                    <FormLabel>Subject</FormLabel>
                     <FormControl>
-                      <Input list="service-options" placeholder="Select or type a service" {...field} />
+                      <Input list="service-options" placeholder="Select or type a subject" {...field} />
                     </FormControl>
                     <datalist id="service-options">
                       {serviceOptions.map((option) => (

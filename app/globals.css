@@ -135,6 +135,21 @@
   }
 }
 
+@layer utilities {
+  .android-safe-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 12px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .android-safe-section-bg {
+    background-attachment: scroll;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

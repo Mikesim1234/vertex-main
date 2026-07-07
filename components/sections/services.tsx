@@ -15,7 +15,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="bg-[linear-gradient(180deg,_rgba(251,146,60,0.08),_rgba(255,255,255,0.7))] py-20 lg:py-28"
+      className="android-safe-section-bg bg-white/[0.92] py-20 lg:py-28"
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center">
@@ -37,7 +37,7 @@ export function Services() {
                 type="button"
                 onClick={() => setActiveId(service.id)}
                 className={cn(
-                  "rounded-2xl border px-5 py-4 text-left transition",
+                  "android-safe-card rounded-2xl border px-5 py-4 text-left transition-colors",
                   activeId === service.id
                     ? "border-primary/40 bg-white/90 shadow-sm"
                     : "border-border/60 bg-white/70 hover:border-primary/30"
@@ -61,7 +61,7 @@ export function Services() {
             ))}
           </div>
 
-          <div className="rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm sm:p-8">
+          <div className="android-safe-card rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm sm:p-8">
             <div className="flex items-center gap-3">
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white">
                 <activeService.icon className="h-6 w-6" />

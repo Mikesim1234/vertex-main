@@ -51,7 +51,7 @@ export function Header() {
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-background/95 shadow-sm shadow-black/5 backdrop-blur-lg"
+          ? "bg-background/95 shadow-sm shadow-black/5"
           : "bg-transparent"
       )}
     >
@@ -227,7 +227,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="h-[calc(100vh-80px)] overflow-y-auto border-t border-border/60 bg-background/95 px-4 py-6 backdrop-blur-lg lg:hidden">
+        <div className="h-[calc(100vh-80px)] overflow-y-auto border-t border-border/60 bg-background/95 px-4 py-6 lg:hidden">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               if (link.label === "Services") {

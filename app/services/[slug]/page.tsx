@@ -179,7 +179,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {page.benefits.map((benefit) => (
-              <article key={benefit} className="rounded-3xl border border-border/60 bg-white/85 p-5 shadow-sm">
+              <article key={benefit} className="android-safe-card rounded-3xl border border-border/60 bg-white/85 p-5 shadow-sm">
                 <CheckCircle2 className="h-5 w-5 text-primary" />
                 <p className="mt-3 text-sm leading-6 text-foreground/70">{benefit}</p>
               </article>
@@ -188,9 +188,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,_rgba(251,146,60,0.08),_rgba(255,255,255,0.72))] py-16 lg:py-24">
+      <section className="android-safe-section-bg bg-white/[0.92] py-16 lg:py-24">
         <div className="container mx-auto grid gap-10 px-4 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm sm:p-8">
+          <div className="android-safe-card rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm sm:p-8">
             <h2 className="font-display text-2xl font-semibold text-foreground">What You Get</h2>
             <ul className="mt-5 space-y-3">
               {page.deliverables.map((item) => (
@@ -202,7 +202,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </ul>
           </div>
 
-          <div className="rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm sm:p-8">
+          <div className="android-safe-card rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm sm:p-8">
             <h2 className="font-display text-2xl font-semibold text-foreground">Delivery Process</h2>
             <ol className="mt-5 space-y-3">
               {page.process.map((item, index) => (
@@ -231,7 +231,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             {page.faqs.map((faq) => (
               <article
                 key={faq.question}
-                className="rounded-3xl border border-border/60 bg-white/85 p-5 shadow-sm"
+                className="android-safe-card rounded-3xl border border-border/60 bg-white/85 p-5 shadow-sm"
               >
                 <h3 className="text-sm font-semibold leading-6 text-foreground">{faq.question}</h3>
                 <p className="mt-3 text-sm leading-6 text-foreground/70">{faq.answer}</p>
@@ -241,9 +241,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,_rgba(251,146,60,0.08),_rgba(255,255,255,0.72))] py-16">
+      <section className="android-safe-section-bg bg-white/[0.92] py-16">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col items-start justify-between gap-6 rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm sm:p-8 lg:flex-row lg:items-center">
+          <div className="android-safe-card flex flex-col items-start justify-between gap-6 rounded-3xl border border-border/60 bg-white/90 p-6 shadow-sm sm:p-8 lg:flex-row lg:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Related Services</p>
               <h2 className="mt-3 font-display text-2xl font-semibold text-foreground">
