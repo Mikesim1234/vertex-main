@@ -1,6 +1,5 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Fraunces, Sora } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { JsonLd } from "@/components/seo/json-ld"
 import { seoKeywords, siteConfig } from "@/lib/data/site"
@@ -11,18 +10,16 @@ import {
 } from "@/lib/seo/schema"
 import "./globals.css"
 
-const sora = Sora({ subsets: ["latin"], variable: "--font-sora" })
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" })
 const ogImage = "/vertex-logo-final.png"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "HR Recruitment Agency in Nairobi, Kenya | Vertex Edge Consultants",
+    default: "Recruitment Agency Kenya | HR Outsourcing & Training",
     template: "%s | Vertex Edge Consultants",
   },
   description:
-    "Award-winning HR recruitment agency in Nairobi, Kenya. We provide recruitment, staffing, HR outsourcing, corporate training, talent acquisition, and HR consulting services across Kenya. Expert HR solutions for growing businesses.",
+    "Vertex Edge Consultants is a Nairobi HR consulting firm offering recruitment, staffing, HR outsourcing, corporate training, and talent acquisition across Kenya.",
   keywords: seoKeywords,
   generator: "v0.app",
   alternates: {
@@ -37,9 +34,9 @@ export const metadata: Metadata = {
     url: "/",
     siteName: siteConfig.name,
     locale: "en_KE",
-    title: "HR Recruitment Agency in Nairobi, Kenya | Vertex Edge Consultants",
+    title: "Recruitment Agency Kenya | HR Outsourcing & Training",
     description:
-      "Award-winning HR recruitment agency in Nairobi, Kenya. Professional recruitment, staffing, HR outsourcing, corporate training, and talent acquisition services across Kenya.",
+      "Nairobi-based recruitment, staffing, HR outsourcing, HR consulting, and corporate training services for organizations across Kenya.",
     images: [
       {
         url: ogImage,
@@ -51,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HR Recruitment Agency Nairobi | Staffing & Training Services",
+    title: "Recruitment Agency Kenya | HR Outsourcing & Training",
     description:
-      "Professional HR recruitment agency in Nairobi, Kenya. Recruitment, staffing, HR outsourcing, corporate training, and talent acquisition for growing businesses.",
+      "Recruitment, staffing, HR outsourcing, HR consulting, and corporate training services in Kenya.",
     images: [ogImage],
   },
   icons: {
@@ -69,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} ${fraunces.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <JsonLd data={[buildOrganizationSchema(), buildLocalBusinessSchema(), buildWebsiteSchema()]} />
         {children}
         <Analytics />

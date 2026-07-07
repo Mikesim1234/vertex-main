@@ -23,8 +23,8 @@ export function buildOrganizationSchema(): JsonLdObject {
     logo: absoluteUrl("/vertex-logo-final.png"),
     email: siteConfig.email,
     telephone: siteConfig.phone,
-    description: "Award-winning HR recruitment agency in Nairobi, Kenya providing recruitment, staffing, HR outsourcing, corporate training, talent acquisition, and HR consulting services.",
-    foundingDate: "2022",
+    description:
+      "Nairobi HR consulting firm providing recruitment, staffing, HR outsourcing, corporate training, talent acquisition, and HR consulting services across Kenya.",
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -40,7 +40,10 @@ export function buildOrganizationSchema(): JsonLdObject {
         telephone: siteConfig.phone,
         email: siteConfig.email,
       },
-    ],\n    knowsAbout: seoKeywords,\n    sameAs: [\n      \"https://www.linkedin.com/company/vertex-edge-consultants\",\n    ],\n  }\n}
+    ],
+    knowsAbout: seoKeywords,
+  }
+}
 
 export function buildLocalBusinessSchema(): JsonLdObject {
   return {
@@ -53,13 +56,6 @@ export function buildLocalBusinessSchema(): JsonLdObject {
     telephone: siteConfig.phone,
     email: siteConfig.email,
     priceRange: "$$",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: "95",
-    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Nairobi",
@@ -75,21 +71,6 @@ export function buildLocalBusinessSchema(): JsonLdObject {
         "@type": "City",
         name: "Nairobi",
       },
-      {
-        "@type": "City",
-        name: "Mombasa",
-      },
-      {
-        "@type": "City",
-        name: "Kisumu",
-      },
-      {
-        "@type": "City",
-        name: "Nakuru",
-      },
-    ],
-    sameAs: [
-      `${siteConfig.url}/#organization`,
     ],
     serviceArea: {
       "@type": "Country",
@@ -108,15 +89,8 @@ export function buildWebsiteSchema(): JsonLdObject {
     "@id": `${siteConfig.url}/#website`,
     name: siteConfig.name,
     url: siteConfig.url,
-    description: "Award-winning HR recruitment agency in Nairobi, Kenya providing recruitment, staffing, HR outsourcing, corporate training, talent acquisition, and HR consulting services across Kenya.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/?search={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
+    description:
+      "Nairobi HR consulting firm providing recruitment, staffing, HR outsourcing, corporate training, talent acquisition, and HR consulting services across Kenya.",
     publisher: {
       "@id": `${siteConfig.url}/#organization`,
     },
